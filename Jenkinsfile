@@ -45,7 +45,7 @@ def runTests(servers, duration) {
     node {
         checkout scm
         servers.runWithServer {id ->
-            mvn "-o -f sometests test -Durl=${jettyUrl}${id}/ -Dduration=${duration}"
+            mvn "-f sometests test -Durl=${jettyUrl}${id}/ -Dduration=${duration}"
         }
     }
 }
